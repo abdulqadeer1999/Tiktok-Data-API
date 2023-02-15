@@ -30,3 +30,5 @@ Route::get('allvideos',[TikTokVideoController::class,'getvideos'])->name('allvid
 Route::get('/user-videos', [TikTokVideoController::class,'getUserVideos'])->name('user.videos');
 
 Route::get('tiktok',[TikTokVideoController::class,'tiktok'])->name('tiktok');
+
+Route::get('mailgun-email',[TikTokVideoController::class,'mailgunemail'])->name('mailgun-email');

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
+
 
 
 class TikTokVideoController extends Controller
@@ -79,6 +81,18 @@ class TikTokVideoController extends Controller
 
     //         return view('user-videos', compact('videos'));
     // }
+
+
+    public function mailgunemail(){
+
+        $data = [];
+        $email = 'djoy62471@gmail.com';
+
+        Mail::send('mailgun_email', ['data'=>true,'new_data'=>$data], function ($messages) use ($email) {
+            $messages->to($email);
+            $messages->subject('Test Email from mail gun');
+        });
+    }
 
 
 }
